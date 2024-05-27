@@ -155,8 +155,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Lifes: 3
-  Speed: 3
-  JumpForse: 60
+  Jumps: 0
+  Speed: 0.1
+  JumpForse: 5
 --- !u!54 &2372512958090492994
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -6,6 +6,7 @@ public class CarFactory : Factory
 {
     public float SpawnTime = 5f;
     public float Spread = 1f;
+    public float SpawnYOffset = 3f;
 
     public DynamicObject[] Cars;
     void Start()
@@ -47,7 +48,7 @@ public class CarFactory : Factory
         float ySize = car.GetComponent<MeshCollider>().bounds.size.y;
 
         Vector3 spawnPosition = new Vector3(randomPoint.x,
-                                            randomPoint.y + ySize,
+                                            randomPoint.y + SpawnYOffset,
                                             randomPoint.z + zSize);
 
         car.transform.position = spawnPosition;

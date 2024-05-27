@@ -5,12 +5,14 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     public int Lifes = 3;
+    public float Jumps = 0;
+
     public float Speed = 3f;
     public float JumpForse = 60f;
 
     private Vector3 _movement;
-    private bool _inAir = false;
     private Rigidbody _rb;
+    private bool _onGround = true;
     void Start()
     {
         _rb = GetComponent<Rigidbody>();
@@ -18,28 +20,42 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        float xMove = Input.GetAxis("Horizontal");
-        float zMove = Input.GetAxis("Vertical");
-        Debug.Log(Input.GetAxis("Jump"));
-
-        if(Input.GetAxis("Jump") != 0f && !_inAir)
+        if (Lifes > 0)
         {
-            _rb.AddForce(Vector3.up * JumpForse * Time.deltaTime, ForceMode.Impulse);
-            _inAir = true;
+            float xMove = Input.GetAxis("Horizontal");
+            float zMove = Input.GetAxis("Vertical");
+
+            _movement = new Vector3(xMove * Speed, 0f, zMove * Speed);
+
+            if (Input.GetKeyDown(KeyCode.Space) && Jumps >= 1f && _onGround)
+            {
+                Jumps -= 1f;
+                _onGround = false;
+                _rb.AddForce(Vector3.up * JumpForse, ForceMode.Impulse);
+            }
+
+            _rb.AddForce(_movement, ForceMode.Force);
+
         }
-
-        _movement = new Vector3(xMove * Speed, 0f, zMove * Speed);
-    }
-
-    private void FixedUpdate()
-    {
-        _rb.velocity = _movement;
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if(other.tag == "Car")
+        if (other.tag == "Car")
         {
+            Debug.Log("Jump ready");
+            Jumps += 0.2f;
+        }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        _onGround = true;
+
+        if (collision.transform.tag == "Car")
+        {
+            Debug.Log("Minus Life");
+
             Lifes -= 1;
         }
     }

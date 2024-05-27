@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Trigger
   - Car
+  - End
   layers:
   - Default
   - TransparentFX
@@ -14,10 +15,10 @@ TagManager:
   - Water
   - UI
   - Trigger
-  - 
-  - 
-  - 
-  - 
+  - Player
+  - Obstacle
+  - Item
+  - Enemy
   - 
   - 
   - 

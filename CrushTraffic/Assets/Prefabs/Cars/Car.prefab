@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8891751745073203827}
   - component: {fileID: 8068814398066312367}
   - component: {fileID: 447117319874672562}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -117,7 +117,7 @@ GameObject:
   - component: {fileID: 3112158375319635290}
   - component: {fileID: 6522603787452709842}
   - component: {fileID: 1080688655966609867}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Cube (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -223,7 +223,7 @@ GameObject:
   - component: {fileID: 3727100485210880608}
   - component: {fileID: 3293973559308820666}
   - component: {fileID: 7840194818509340023}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Car
   m_TagString: Car
   m_Icon: {fileID: 0}
@@ -335,5 +335,5 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 13.365722, y: 1, z: 1}
-  m_Center: {x: -1.561583, y: 0, z: 0}
+  m_Size: {x: 20, y: 5, z: 1}
+  m_Center: {x: -1.561583, y: 1.89, z: 0}

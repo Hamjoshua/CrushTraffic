@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class GameManager : MonoBehaviour
 {
@@ -11,6 +12,12 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private float _timeForIncreaseSpeed = 1f;
     public float GlobalSpeed = 0f;
+
+    public UnityEvent OnDefeat;
+
+    [Header("Player")]
+    public float Jumps;
+    public int Lifes;
 
     [Space(5)]
     private bool _isOver;

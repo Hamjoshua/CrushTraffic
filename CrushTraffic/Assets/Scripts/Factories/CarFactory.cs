@@ -8,12 +8,15 @@ public class CarFactory : Factory
     public float Spread = 1f;
     public float SpawnYOffset = 3f;
 
+    public int CountOfSpawnedInOneTime = 1;
+
     public DynamicObject[] Cars;
     void Start()
     {
-        Invoke("SpawnObject", GetRandomSpawnTime());
-        Invoke("SpawnObject", GetRandomSpawnTime());
-        Invoke("SpawnObject", GetRandomSpawnTime());
+        for(int _ = 0; _ < CountOfSpawnedInOneTime; ++_)
+        {
+            Invoke("SpawnObject", GetRandomSpawnTime());
+        }
     }    
 
     public float GetRandomSpawnTime()

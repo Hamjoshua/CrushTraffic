@@ -42,8 +42,6 @@ public class UIScript : MonoBehaviour
         float lowerPart = (float) Convert.ToDouble("0," + floatAsString[1]);
         int upperPart = Convert.ToInt32(floatAsString[0]);
 
-        Debug.Log($"{jumps}, {upperPart}.{lowerPart}");
-
         JumpsSlider.value = lowerPart;
         JumpsText.text = upperPart.ToString();
     }

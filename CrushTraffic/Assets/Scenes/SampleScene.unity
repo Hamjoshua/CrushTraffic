@@ -756,6 +756,7 @@ MonoBehaviour:
   SpawnTime: 5
   Spread: 1
   SpawnYOffset: 0.4
+  CountOfSpawnedInOneTime: 3
   Cars:
   - {fileID: 3293973559308820666, guid: a32927c7b3adbeb44a45bbd73c4f11e2, type: 3}
   - {fileID: 6437505721002397278, guid: 65a307d0925611546833f89f948681a8, type: 3}
@@ -767,12 +768,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 406379869}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.5847, y: 3.2713163, z: -0.76483077}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -4.1142993, y: 3.6145186, z: -3.4992578}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 473696866}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &411259289
 GameObject:
@@ -908,6 +909,40 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 411259289}
   m_CullTransparentMesh: 1
+--- !u!1 &473696865
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 473696866}
+  m_Layer: 0
+  m_Name: ==FACTORIES
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &473696866
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 473696865}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 3.5295992, y: -0.34320247, z: 2.734427}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 557333111}
+  - {fileID: 406379871}
+  - {fileID: 737773168}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &482796747
 GameObject:
   m_ObjectHideFlags: 0
@@ -1219,12 +1254,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 557333109}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.5221493, y: -18.848373, z: 9.462869}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -7.0517483, y: -18.50517, z: 6.7284417}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 473696866}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &637762095
 GameObject:
@@ -1454,6 +1489,59 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1 &737773167
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 737773168}
+  - component: {fileID: 737773169}
+  m_Layer: 0
+  m_Name: ItemFactory
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &737773168
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 737773167}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -4.1142993, y: 3.6145186, z: -3.4992578}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 473696866}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &737773169
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 737773167}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1f01aace68d54f47a0cf9aac7198cca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SpawnPoint: {fileID: 1175816849}
+  SpawnTime: 10
+  Spread: 1
+  SpawnYOffset: 0.4
+  CountOfSpawnedInOneTime: 1
+  Cars:
+  - {fileID: -3812257209962570871, guid: 0e256dda5b306fb40861f184ed6f6010, type: 3}
+  - {fileID: 8422864043705613494, guid: 8b9c317ee59fad24ca459d52df6e11ea, type: 3}
+  - {fileID: 5259619125355118770, guid: ece1d013655564a4aaae8119ecba5930, type: 3}
 --- !u!1 &788044135
 GameObject:
   m_ObjectHideFlags: 0
@@ -2542,7 +2630,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2005337327}
   m_Layer: 0
-  m_Name: WALLS
+  m_Name: ==WALLS
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2841,11 +2929,10 @@ SceneRoots:
   - {fileID: 3093859447179012633}
   - {fileID: 1175816851}
   - {fileID: 154102600}
-  - {fileID: 557333111}
-  - {fileID: 406379871}
   - {fileID: 548753046}
   - {fileID: 1987696207}
   - {fileID: 1607515882}
   - {fileID: 557178894}
   - {fileID: 2005337327}
   - {fileID: 214311716}
+  - {fileID: 473696866}

@@ -10,6 +10,7 @@ public class EndScript : MonoBehaviour
         {
             GameManager.Instance.Lifes -= 1000;
         }
+
         Destroy(collision.gameObject, 1);
     }
 }

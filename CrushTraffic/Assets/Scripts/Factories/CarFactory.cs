@@ -47,8 +47,8 @@ public class CarFactory : Factory
         DynamicObject car = Instantiate(GetRandomCar());
         Vector3 randomPoint = GetRandomSpawnPoint();
 
-        float zSize = car.GetComponent<MeshCollider>().bounds.size.z;
-        float ySize = car.GetComponent<MeshCollider>().bounds.size.y;
+        float zSize = car.GetComponent<BoxCollider>().bounds.size.z;
+        float ySize = car.GetComponent<BoxCollider>().bounds.size.y;
 
         Vector3 spawnPosition = new Vector3(randomPoint.x,
                                             randomPoint.y + SpawnYOffset,

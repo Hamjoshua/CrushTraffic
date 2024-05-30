@@ -32,6 +32,14 @@ public class GameManager : MonoBehaviour
         StartCoroutine(IncreaseSpeed());
     }
 
+    public void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
+    }
+
     IEnumerator IncreaseSpeed()
     {
         while (!_isOver)

@@ -7,12 +7,16 @@ public class Item : DynamicObject
 {
     public UnityEvent EventOnCollision;
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider collision)
     {
         if(collision.gameObject.tag == "Player")
         {
+            GetComponent<BoxCollider>().enabled = false;
+            GetComponentInChildren<MeshRenderer>().enabled = false;
+            PlaySound();
             EventOnCollision.Invoke();
-            Destroy(gameObject);
+            float time = GetComponent<AudioSource>().clip.length;
+            Destroy(gameObject, time);
         }
     }
 

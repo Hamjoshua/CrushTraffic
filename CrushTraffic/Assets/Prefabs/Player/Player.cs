@@ -12,6 +12,10 @@ public class Player : MonoBehaviour
     private Rigidbody _rb;
     private bool _onGround = true;
 
+    public AudioSource JumpAddedSFX;
+    public AudioSource MakeJumpSFX;
+    public AudioSource NewJumpIsReadySFX;
+
     void Start()
     {
         _rb = GetComponent<Rigidbody>();
@@ -32,6 +36,7 @@ public class Player : MonoBehaviour
             {
                 GameManager.Instance.Jumps -= 1f;
                 _onGround = false;
+                MakeJumpSFX.Play();
                 _rb.AddForce(Vector3.up * JumpForse, ForceMode.Impulse);
             }
 
@@ -48,8 +53,20 @@ public class Player : MonoBehaviour
         if (other.tag == "Car")
         {
             Debug.Log("Jump ready");
+            JumpAddedSFX.Play();
             GameManager.Instance.Jumps += 0.2f;
+            if (IsNewJumpReady())
+            {
+                NewJumpIsReadySFX.Play();
+            }
         }
+    }
+
+    bool IsNewJumpReady()
+    {
+        string lastLetter = GameManager.Instance.Jumps.ToString().Split(',')[0];
+
+        return lastLetter == "0";
     }
 
     private void OnCollisionEnter(Collision collision)

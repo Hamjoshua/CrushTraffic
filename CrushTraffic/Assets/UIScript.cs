@@ -23,6 +23,7 @@ public class UIScript : MonoBehaviour
 
     public void StartGame()
     {
+        GameManager.Instance.Music.Play();
         Time.timeScale = 1f;
         StartButton.SetActive(false);
     }
@@ -60,6 +61,7 @@ public class UIScript : MonoBehaviour
     public void ShowDefeatWindow()
     {
         DefeatWindow.SetActive(true);
+        GameManager.Instance.Music.Stop();
         Time.timeScale = 0f;
     }
 

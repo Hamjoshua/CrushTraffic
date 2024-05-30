@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
     private float _timeForIncreaseSpeed = 1f;
     public float GlobalSpeed = 0f;
 
+    public AudioSource Music;
     public UnityEvent OnDefeat;
 
     [Header("Player")]

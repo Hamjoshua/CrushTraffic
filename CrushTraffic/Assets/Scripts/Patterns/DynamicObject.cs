@@ -17,6 +17,12 @@ abstract public class DynamicObject : MonoBehaviour
         _globalSpeed = Speed;
     }
 
+    protected void PlaySound()
+    {
+        AudioSource audioSource = GetComponent<AudioSource>();
+        audioSource.Play();
+    }
+
     // Update is called once per frame
     protected virtual void Update()
     {

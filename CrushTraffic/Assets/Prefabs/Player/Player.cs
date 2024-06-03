@@ -5,20 +5,22 @@ using UnityEngine.Events;
 
 public class Player : MonoBehaviour
 {
-    public float Speed = 3f;
-    public float JumpForse = 60f;
+    public float Speed = 3.0f;
+    public float JumpForse = 60.0f;
+    public float AirMultiplier = 0.4f;
 
     private Vector3 _movement;
-    private Rigidbody _rb;
+    private Rigidbody _rigidBody;
     private bool _onGround = true;
 
     public AudioSource JumpAddedSFX;
     public AudioSource MakeJumpSFX;
     public AudioSource NewJumpIsReadySFX;
+    public AudioSource JumpIsNotReadySFX;
 
     void Start()
     {
-        _rb = GetComponent<Rigidbody>();
+        _rigidBody = GetComponent<Rigidbody>();
     }
 
     void Update()
@@ -28,19 +30,34 @@ public class Player : MonoBehaviour
             float xMove = Input.GetAxis("Horizontal");
             float zMove = Input.GetAxis("Vertical");
 
-            _movement = new Vector3(xMove * Speed, 0f, zMove * Speed);
+            _movement = new Vector3(xMove * Speed, 0.0f, zMove * Speed);
 
-            if (Input.GetKeyDown(KeyCode.Space) &&
-                GameManager.Instance.Jumps >= 1f && 
-                _onGround)
+
+            if (Input.GetKeyDown(KeyCode.Space))
             {
-                GameManager.Instance.Jumps -= 1f;
-                _onGround = false;
-                MakeJumpSFX.Play();
-                _rb.AddForce(Vector3.up * JumpForse, ForceMode.Impulse);
+                if (GameManager.Instance.Jumps >= 1.0f
+                    && _onGround)
+                {
+                    GameManager.Instance.Jumps -= 1.0f;
+                    _onGround = false;
+                    MakeJumpSFX.Play();
+                    _rigidBody.AddForce(Vector3.up * JumpForse, ForceMode.Impulse);
+
+                }
+                else
+                {
+                    JumpIsNotReadySFX.Play();
+                }
             }
 
-            _rb.AddForce(_movement, ForceMode.Force);
+            if (_onGround)
+            {
+                _rigidBody.AddForce(_movement, ForceMode.Force);
+            }
+            else
+            {
+                _rigidBody.AddForce(_movement * AirMultiplier, ForceMode.Force);
+            }
         }
         else
         {
@@ -54,7 +71,7 @@ public class Player : MonoBehaviour
         {
             Debug.Log("Jump ready");
             JumpAddedSFX.Play();
-            GameManager.Instance.Jumps += 0.2f;
+            GameManager.Instance.Jumps += GameManager.Instance.JumpIncrease;
             if (IsNewJumpReady())
             {
                 NewJumpIsReadySFX.Play();

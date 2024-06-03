@@ -10,13 +10,14 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private float _increasingStep = 0.1f;
     [SerializeField]
-    private float _timeForIncreaseSpeed = 1f;
-    public float GlobalSpeed = 0f;
+    private float _timeForIncreaseSpeed = 1.0f;
+    public float GlobalSpeed = 0.0f;
 
     public AudioSource Music;
     public UnityEvent OnDefeat;
 
     [Header("Player")]
+    public float JumpIncrease = 0.2f;
     public float Jumps;
     public int Lifes;
 

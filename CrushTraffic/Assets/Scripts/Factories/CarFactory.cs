@@ -4,20 +4,20 @@ using UnityEngine;
 
 public class CarFactory : Factory
 {
-    public float SpawnTime = 5f;
-    public float Spread = 1f;
-    public float SpawnYOffset = 3f;
+    public float SpawnTime = 5.0f;
+    public float Spread = 1.0f;
+    public float SpawnYOffset = 3.0f;
 
     public int CountOfSpawnedInOneTime = 1;
 
     public DynamicObject[] Cars;
     void Start()
     {
-        for(int _ = 0; _ < CountOfSpawnedInOneTime; ++_)
+        for (int _ = 0; _ < CountOfSpawnedInOneTime; ++_)
         {
             Invoke("SpawnObject", GetRandomSpawnTime());
         }
-    }    
+    }
 
     public float GetRandomSpawnTime()
     {
@@ -48,7 +48,6 @@ public class CarFactory : Factory
         Vector3 randomPoint = GetRandomSpawnPoint();
 
         float zSize = car.GetComponent<BoxCollider>().bounds.size.z;
-        float ySize = car.GetComponent<BoxCollider>().bounds.size.y;
 
         Vector3 spawnPosition = new Vector3(randomPoint.x,
                                             randomPoint.y + SpawnYOffset,

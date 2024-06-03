@@ -32,7 +32,7 @@ abstract public class DynamicObject : MonoBehaviour
 
     private void MoveDown()
     {
-        transform.Translate(_globalSpeed * Vector3.forward * -1 * Time.deltaTime);
+        transform.Translate(_globalSpeed * -Vector3.forward * Time.deltaTime);
     }
 
     private void Die()

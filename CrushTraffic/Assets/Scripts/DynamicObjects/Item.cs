@@ -9,7 +9,7 @@ public class Item : DynamicObject
 
     private void OnTriggerEnter(Collider collision)
     {
-        if(collision.gameObject.tag == "Player")
+        if (collision.gameObject.tag == "Player")
         {
             GetComponent<BoxCollider>().enabled = false;
             GetComponentInChildren<MeshRenderer>().enabled = false;
@@ -24,7 +24,7 @@ public class Item : DynamicObject
     {
         Debug.Log("--ENEMIES");
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("Car");
-        foreach(var enemy in enemies)
+        foreach (var enemy in enemies)
         {
             Destroy(enemy);
         }

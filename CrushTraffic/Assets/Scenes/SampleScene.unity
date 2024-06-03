@@ -1077,6 +1077,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  JumpIncrease: 0.2
   Jumps: 1.5
   Lifes: 3
 --- !u!4 &548753046
@@ -1106,7 +1107,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: ab8a02d2c561de949838aecce305fc8a, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -2610,6 +2611,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 2206455724916973513, guid: 6c6f23566fe1e9941b6ad76f3b9ee3c6, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2372512958090492994, guid: 6c6f23566fe1e9941b6ad76f3b9ee3c6, type: 3}
       propertyPath: m_UseGravity
       value: 1
@@ -2617,6 +2622,10 @@ PrefabInstance:
     - target: {fileID: 2372512958090492994, guid: 6c6f23566fe1e9941b6ad76f3b9ee3c6, type: 3}
       propertyPath: m_Constraints
       value: 112
+      objectReference: {fileID: 0}
+    - target: {fileID: 2372512958090492994, guid: 6c6f23566fe1e9941b6ad76f3b9ee3c6, type: 3}
+      propertyPath: m_Interpolate
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2372512958090492994, guid: 6c6f23566fe1e9941b6ad76f3b9ee3c6, type: 3}
       propertyPath: m_IsKinematic
@@ -2629,14 +2638,6 @@ PrefabInstance:
     - target: {fileID: 3900641662021647181, guid: 6c6f23566fe1e9941b6ad76f3b9ee3c6, type: 3}
       propertyPath: Jumps
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3900641662021647181, guid: 6c6f23566fe1e9941b6ad76f3b9ee3c6, type: 3}
-      propertyPath: Speed
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 3900641662021647181, guid: 6c6f23566fe1e9941b6ad76f3b9ee3c6, type: 3}
-      propertyPath: JumpForse
-      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 3900641662021647181, guid: 6c6f23566fe1e9941b6ad76f3b9ee3c6, type: 3}
       propertyPath: OnHurt.m_PersistentCalls.m_Calls.Array.size
@@ -2714,12 +2715,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8108618886013673637, guid: 6c6f23566fe1e9941b6ad76f3b9ee3c6, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 6316532553381764407, guid: 6c6f23566fe1e9941b6ad76f3b9ee3c6, type: 3}
-      insertIndex: -1
+      insertIndex: 7
       addedObject: {fileID: 96695479}
   m_SourcePrefab: {fileID: 100100000, guid: 6c6f23566fe1e9941b6ad76f3b9ee3c6, type: 3}
 --- !u!1 &1996052498

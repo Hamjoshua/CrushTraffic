@@ -1,6 +1,4 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -15,16 +13,15 @@ public class UIScript : MonoBehaviour
 
     public TextMeshProUGUI JumpsText;
     public Slider JumpsSlider;
-    // Start is called before the first frame update
     void Start()
     {
-        Time.timeScale = 0f;  
+        Time.timeScale = 0.0f;
     }
 
     public void StartGame()
     {
         GameManager.Instance.Music.Play();
-        Time.timeScale = 1f;
+        Time.timeScale = 1.0f;
         StartButton.SetActive(false);
     }
 
@@ -39,8 +36,8 @@ public class UIScript : MonoBehaviour
     {
         float jumps = GameManager.Instance.Jumps;
         string[] floatAsString = jumps.ToString().Split(",");
-        
-        float lowerPart = (float) Convert.ToDouble("0," + floatAsString[1]);
+
+        float lowerPart = (float)Convert.ToDouble("0," + floatAsString[1]);
         int upperPart = Convert.ToInt32(floatAsString[0]);
 
         JumpsSlider.value = lowerPart;
@@ -57,14 +54,12 @@ public class UIScript : MonoBehaviour
         float score = GameManager.Instance.GlobalSpeed;
         ScoreText.text = $"{score:,00}";
     }
-
     public void ShowDefeatWindow()
     {
         DefeatWindow.SetActive(true);
         GameManager.Instance.Music.Stop();
-        Time.timeScale = 0f;
+        Time.timeScale = 0.0f;
     }
-
     public void ReloadLevel()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);

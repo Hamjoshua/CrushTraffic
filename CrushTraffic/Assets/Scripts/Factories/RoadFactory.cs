@@ -11,7 +11,7 @@ public class RoadFactory : Factory
         DynamicObject newRoad = Instantiate(Road, SpawnPoint.transform.position, Quaternion.identity);
 
         float zSize = newRoad.GetComponent<BoxCollider>().bounds.size.z;
-        float shiftZ = (newRoad.Speed + GameManager.Instance.GlobalSpeed) / 50;
+        float shiftZ = (newRoad.Speed + GameManager.Instance.GlobalSpeed) / 50.0f;
 
         Vector3 spawnPosition = new Vector3(otherTransform.localPosition.x,
                                             otherTransform.localPosition.y,

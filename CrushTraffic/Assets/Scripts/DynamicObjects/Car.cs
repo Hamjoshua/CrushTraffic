@@ -10,8 +10,8 @@ public class Car : DynamicObject
         if (collision.gameObject.tag == "Player")
         {
             PlaySound();
-            Rigidbody _rb = GetComponent<Rigidbody>();
-            _rb.AddForce(Vector3.forward * 1 * CollisionImpact, ForceMode.Impulse);
+            Rigidbody _rigidBody = GetComponent<Rigidbody>();
+            _rigidBody.AddForce(Vector3.forward * CollisionImpact, ForceMode.Impulse);
         }
     }
 }
